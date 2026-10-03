@@ -11,6 +11,8 @@ permissions:
 jobs:
   replay:
     runs-on: ubuntu-22.04
+    container:
+      image: python:3.9.10-bullseye@sha256:1f7b4d6a14489f570000aa763cbbde71d5fe404cc43563c82f9b807c757a2113
     timeout-minutes: 25
     env:
       PYTHONDONTWRITEBYTECODE: '1'
@@ -19,9 +21,6 @@ jobs:
       MKL_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
-        with:
-          python-version: '3.9.10'
       - name: Unpack and verify frozen bundle
         run: python -B unpack_bundle.py
       - name: Install pinned model environment
