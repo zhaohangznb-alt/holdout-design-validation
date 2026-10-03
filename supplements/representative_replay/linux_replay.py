@@ -26,10 +26,26 @@ def main():
     if args.output is None:ap.error('--output required')
     out=args.output.resolve();out.relative_to(bundle);assert out!=bundle
     out.mkdir(parents=True,exist_ok=False);(out/'logs').mkdir();commands=[]
+    # Preserve the archive. Explicit CRLF matches the Windows ordered-signature
+    # serialization; it does not change source CSV bytes, row order or labels.
+    code_changes=[]
+    for source in sorted(bundle.glob('*.py')):
+        data=source.read_text(encoding='utf8')
+        if source.name in ['runner.py','external_runner.py']:
+            old="f[['record_uid','smiles','target']].to_csv(index=False).encode()"
+            new="f[['record_uid','smiles','target']].to_csv(index=False,lineterminator='\\r\\n').encode()"
+            assert data.count(old)==1
+            data=data.replace(old,new)
+        dest=out/source.name;dest.write_text(data,encoding='utf8')
+        code_changes.append(dict(file=source.name,archived_sha256=sha(source),runtime_sha256=sha(dest),ordered_signature_crlf=source.name in ['runner.py','external_runner.py']))
+    for source in bundle.glob('*PROTOCOL.md'):
+        (out/source.name).write_bytes(source.read_bytes())
+    os.symlink(bundle/'inputs',out/'inputs',target_is_directory=True)
+    save(out/'COMPATIBILITY_ADAPTER.json',dict(changes=code_changes,scientific_change=False,detail='Explicit CRLF only for ordered-input hash serialization; all 408 literal input hashes remain mandatory'))
     plan=dict(created_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),cases=[dict(panel=p,target=t,view='main',scenario='revised',route='source_exact',model=m,seed=s) for p,t in [('kinase','alk'),('nonkinase','ache')] for m,seeds in [('rf',[42,53,67]),('tanimoto1nn',[0])] for s in seeds],prediction_tolerance=1e-12,environment=env,network_used_for_preparation_or_models=False)
     save(out/'CASE_PLAN.json',plan)
     def step(script,*params):
-        cmd=[sys.executable,'-B',str(bundle/script),*map(str,params)];log=out/'logs'/('%02d_%s.log'%(len(commands)+1,Path(script).stem));entry=dict(command=cmd,state='running',started=time.time(),log=log.relative_to(out).as_posix());commands.append(entry);save(out/'commands.json',commands)
+        cmd=[sys.executable,'-B',str(out/script),*map(str,params)];log=out/'logs'/('%02d_%s.log'%(len(commands)+1,Path(script).stem));entry=dict(command=cmd,state='running',started=time.time(),log=log.relative_to(out).as_posix());commands.append(entry);save(out/'commands.json',commands)
         with log.open('w',encoding='utf8') as stream:p=subprocess.run(cmd,cwd=bundle,stdout=stream,stderr=subprocess.STDOUT,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'))
         entry.update(state='complete' if p.returncode==0 else 'failed',finished=time.time(),returncode=p.returncode,log_sha256=sha(log));save(out/'commands.json',commands)
         if p.returncode:
