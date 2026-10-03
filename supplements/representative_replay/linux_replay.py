@@ -32,7 +32,11 @@ def main():
         cmd=[sys.executable,'-B',str(bundle/script),*map(str,params)];log=out/'logs'/('%02d_%s.log'%(len(commands)+1,Path(script).stem));entry=dict(command=cmd,state='running',started=time.time(),log=log.relative_to(out).as_posix());commands.append(entry);save(out/'commands.json',commands)
         with log.open('w',encoding='utf8') as stream:p=subprocess.run(cmd,cwd=bundle,stdout=stream,stderr=subprocess.STDOUT,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'))
         entry.update(state='complete' if p.returncode==0 else 'failed',finished=time.time(),returncode=p.returncode,log_sha256=sha(log));save(out/'commands.json',commands)
-        assert p.returncode==0,str(log)
+        if p.returncode:
+            print(log.read_text(encoding='utf8'),flush=True)
+            for nested in sorted((out/'fresh/logs').glob('*.log')):
+                print(nested.name,nested.read_text(encoding='utf8'),flush=True)
+            raise RuntimeError(str(log))
     step('reproduce.py','--output',out/'fresh','--prepare-only')
     import numpy as np,pandas as pd
     input_checks=[]
