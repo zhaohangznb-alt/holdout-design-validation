@@ -36,6 +36,10 @@ def main():
             new="f[['record_uid','smiles','target']].to_csv(index=False,lineterminator='\\r\\n').encode()"
             assert data.count(old)==1
             data=data.replace(old,new)
+        if source.name=='prepare_external.py':
+            old='.to_csv(dest,index=False)'
+            assert data.count(old)==1
+            data=data.replace(old,".to_csv(dest,index=False,lineterminator='\\r\\n')")
         dest=out/source.name;dest.write_text(data,encoding='utf8')
         code_changes.append(dict(file=source.name,archived_sha256=sha(source),runtime_sha256=sha(dest),ordered_signature_crlf=source.name in ['runner.py','external_runner.py']))
     for source in bundle.glob('*PROTOCOL.md'):
@@ -60,7 +64,7 @@ def main():
         manifest=pd.read_csv(ref/('split_manifest.csv' if panel=='kinase' else 'external_split_manifest.csv'))
         for r in manifest.itertuples():
             filename=str(r.corrected_csv).replace('\\','/').rsplit('/',1)[-1];f=out/'fresh'/sub/'data'/r.view/filename
-            assert sha(f)==r.corrected_sha256
+            assert sha(f)==r.corrected_sha256,(str(f),sha(f),r.corrected_sha256)
             input_checks.append(dict(panel=panel,path=f.relative_to(out).as_posix(),sha256=sha(f),archived_sha256=r.corrected_sha256))
     assert len(input_checks)==408;save(out/'input_checks.json',input_checks)
     predictions=[];fits=indices=0
