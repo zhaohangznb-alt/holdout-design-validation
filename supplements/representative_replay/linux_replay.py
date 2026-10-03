@@ -56,8 +56,8 @@ def main():
     step('reproduce.py','--output',out/'fresh','--prepare-only')
     import numpy as np,pandas as pd
     input_checks=[]
-    for panel,sub,ref in [('kinase','current_prepared',bundle/'inputs/current_reference'),('nonkinase','external_prepared',bundle/'results/external_preparation')]:
-        manifest=pd.read_csv(ref/'split_manifest.csv')
+    for panel,sub,ref in [('kinase','current_prepared',bundle/'inputs/current_reference'),('nonkinase','external_prepared',Path(__file__).resolve().parent)]:
+        manifest=pd.read_csv(ref/('split_manifest.csv' if panel=='kinase' else 'external_split_manifest.csv'))
         for r in manifest.itertuples():
             filename=str(r.corrected_csv).replace('\\','/').rsplit('/',1)[-1];f=out/'fresh'/sub/'data'/r.view/filename
             assert sha(f)==r.corrected_sha256
@@ -87,5 +87,6 @@ def main():
                 predictions.append(dict(panel=panel,case=f.name,rows=nrows,prediction_max_abs_difference=errors['prediction'],all_numeric_errors=errors,byte_identical=sha(f)==sha(ref),fresh_sha256=sha(f),archived_sha256=sha(ref),ledger=done.parent.joinpath(d['job_key']+'.fit.json').relative_to(out).as_posix()))
     assert fits==6 and indices==2 and len(predictions)==8
     save(out/'LINUX_REPLAY_COMPLETE.json',dict(passed=True,completed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),input_tables_byte_identical=408,rf_fresh_fits=fits,nn_indices=indices,prediction_cases=predictions,prediction_tolerance=1e-12,environment=env,bootstrap_executed=False,full_680_retraining=False))
+    print('LINUX_COMPLETION_JSON '+json.dumps(read(out/'LINUX_REPLAY_COMPLETE.json'),separators=(',',':')),flush=True)
     print('PASS: Linux offline 408 input tables, 6 RF fits, 2 NN indices',flush=True)
 if __name__=='__main__':main()
