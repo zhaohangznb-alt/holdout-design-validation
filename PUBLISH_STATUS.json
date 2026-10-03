@@ -1,10 +1,14 @@
 {
-  "status_at_packaging_utc": "2026-10-03T09:46:51.824474+00:00",
+  "updated_utc": "2026-10-03T09:56:52.369508+00:00",
+  "scientific_extension_complete": true,
   "github_account": "zhaohangznb-alt",
   "repository_url": "https://github.com/zhaohangznb-alt/holdout-design-validation",
   "repository_created": true,
-  "github_state": "verified_payload_ready_for_upload",
-  "zenodo_state": "awaiting_new_OAuth_webhook_admin_permission",
+  "github_state": "complete_payload_public_and_independently_verified",
+  "verified_payload_commit": "3be682606f74bc8c4c0768106d0bee1ff37fb1eb",
+  "zenodo_state": "awaiting_user_confirmation_for_new_OAuth_webhook_admin_permission",
   "doi": null,
-  "version_release_published": false
+  "version_release_published": false,
+  "release_hold_reason": "connect Zenodo before the first version release so the release can trigger archival",
+  "bundle_sha256": "8fa707f1b8e5569b9723105c741cdd6b5d174441f718c78a00876d028c5724a1"
 }
