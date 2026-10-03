@@ -1,0 +1,38 @@
+{
+  "run_id": 37128892159,
+  "job_id": 111219808403,
+  "commit": "ab031551cfba56b8982d3563221ca04a2d590923",
+  "run_url": "https://github.com/zhaohangznb-alt/holdout-design-validation/actions/runs/37128892159",
+  "artifact_id": 11275972059,
+  "artifact_sha256": "0f0190f8c480783c70beae9c6eef946c3c6c75e6c4ad0b3848413a8424097099",
+  "completion_json_source": "GitHub authenticated job logs, LINUX_COMPLETION_JSON marker; checked against success status and artifact metadata",
+  "artifact_zip_locally_downloaded": false,
+  "prior_failures": [
+    {
+      "run_id": 37127273642,
+      "model_execution": false,
+      "reason": "No Python3.9.10 installer for Ubuntu22.04"
+    },
+    {
+      "run_id": 37127608324,
+      "model_execution": false,
+      "reason": "Ordered-input signature newline mismatch; nested log retained as artifact"
+    },
+    {
+      "run_id": 37128034234,
+      "model_execution": false,
+      "reason": "Same known preparation error, nested stdout exposed for diagnosis"
+    },
+    {
+      "run_id": 37128372890,
+      "model_execution": false,
+      "reason": "External reference manifest absent from sealed bundle"
+    },
+    {
+      "run_id": 37128652615,
+      "model_execution": false,
+      "reason": "External CSV newline bytes differ on Linux"
+    }
+  ],
+  "no_unknown_model_submission_repeated": true
+}

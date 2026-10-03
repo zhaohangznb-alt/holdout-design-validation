@@ -1,6 +1,6 @@
 # Holdout-design validation
 
-Companion to *Holdout Design Changes Random Forest Utility Estimates across Six Kinases*.
+Companion to *Holdout Design and Utility Estimates in ChEMBL Bioactivity Prediction*.
 
 The complete offline package is `verified_bundle_v1.tar.xz` (SHA-256 in `BUNDLE_SHA256.txt`). It contains frozen inputs, all 680 prediction cases, analysis, fit ledgers and verification records. Root-level scripts are provided for browsing; run the pipeline from the extracted `bundle/` directory.
 
@@ -22,6 +22,14 @@ Publication state is tracked in the repository-root `PUBLISH_STATUS.json`. The c
 ![Broad-cohort paired changes](paired_changes_revised.png)
 
 ![Operational-cohort paired changes](paired_changes_single_protein.png)
+
+## Subsequent verified supplements
+
+- [Primary RF statistics](primary_rf631/README.md):exact288 seed statistics and96 original conditional document intervals used by SI Tables S3/S4; files, protocol versions and hashes are public.
+- [Representative replay](supplements/representative_replay/README.md):actual Windows/Linux408-table reconstruction, six fresh RF fits and two1-NN indices per platform; Linux run37128892159 passed.
+- [Frozen-prediction diagnostics](supplements/holdout_diagnostics/README.md):44 contexts/11 targets,220 frozen prediction files,51,900 repeated test-context appearances, Figure6 and TableS21 with full-precision data. All11 year-exact targets have smaller training sets and lower median structural proximity. PTGS2 has lower RF absolute MSE but lower skill because its baseline improves more.
+
+These additions have separate manifests. `verified_bundle_v1.tar.xz` retains its original bytes. The diagnostic data commit is3553db3a62e7ff696595cac2a6e6a6f559e4dd43; executed Linux code isab031551cfba56b8982d3563221ca04a2d590923. Detailed run results are retained in the supplement. Zenodo linkage and a version DOI remain pending.
 
 ## Main findings
 
@@ -52,7 +60,7 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-The second command must use the activated environment's Python. The validated Python/version details and clean-directory scope are in `verification/clean_directory_check.json`. Linux full training has not been verified.
+The second command must use the activated environment's Python. The validated Python/version details and clean-directory scope are in `verification/clean_directory_check.json`. A bounded Linux replay is verified in the subsequent supplement; full680-case Linux training has not been run.
 
 ## Offline end-to-end reproduction
 
