@@ -1,0 +1,13 @@
+{
+  "primary": {
+    "path": "E:\\paper\\kinase_followup_execution\\claude_manuscript_polish_20261002_v1\\final_delivery_20261003_v1\\03_reproducibility\\policy631_execution\\verify_bootstrap.py",
+    "sha256": "df21c1053f1820a87d9cb73909eea3de521fa35daa0cb290bd61850a25fb6c90",
+    "seed": "20260928 + target index * 10 + route index"
+  },
+  "cross_model": {
+    "path": "E:\\paper\\kinase_followup_execution\\algorithm_validation_extension_20261003_v1\\public_release_v1\\analyze_results.py",
+    "sha256": "c50f30f34e41ade4de8c1c560a775719ef1ec7de47aa7a9383b0c96117137189",
+    "seed": "SHA256(panel|view|scenario|target|route) first 8 hex digits"
+  },
+  "executed": false
+}

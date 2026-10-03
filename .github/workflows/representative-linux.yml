@@ -1,0 +1,45 @@
+name: Representative Linux replay
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'supplements/representative_replay/linux_replay.py'
+      - '.github/workflows/representative-linux.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.9.10'
+      - name: Unpack and verify frozen bundle
+        run: python -B unpack_bundle.py
+      - name: Install pinned model environment
+        run: python -m pip install -r bundle/requirements.txt
+      - name: Check environment without fitting
+        run: python -B supplements/representative_replay/linux_replay.py --bundle bundle --preflight-only
+      - name: Offline bounded fresh replay
+        run: python -B supplements/representative_replay/linux_replay.py --bundle bundle --output bundle/linux_replay_v1
+      - name: Retain outcome and actual execution logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: representative-linux-replay
+          if-no-files-found: warn
+          path: |
+            bundle/linux_replay_v1/**/*.json
+            bundle/linux_replay_v1/**/*.log
+            bundle/linux_replay_v1/kinase_rf/*.csv
+            bundle/linux_replay_v1/nonkinase_rf/*.csv
+            bundle/linux_replay_v1/kinase_tanimoto1nn/*.csv
+            bundle/linux_replay_v1/nonkinase_tanimoto1nn/*.csv
