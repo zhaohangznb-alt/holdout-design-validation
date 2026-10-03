@@ -1,0 +1,22 @@
+{
+  "stage": "final",
+  "status": "PASS",
+  "source_files_unchanged": 181,
+  "prepared_files_checked": 143,
+  "targets": 11,
+  "common_test_rows": 4814,
+  "logical_prediction_references": 1100,
+  "unique_prediction_cases": 385,
+  "prepared_sampling_checks": 110,
+  "completed_utc": "2026-10-03T15:10:38.574531+00:00",
+  "new_rf_fits": 165,
+  "new_ridge_fits": 55,
+  "new_nn_indices": 55,
+  "reused_unique_prediction_cases": 110,
+  "independent_nearest_checks": 231,
+  "metrics_max_abs_error": 0.0,
+  "per_draw_contrasts": 165,
+  "target_model_summaries": 33,
+  "per_draw_additive_identity": "PASS",
+  "sampling_ranges_are_not_confidence_intervals": true
+}

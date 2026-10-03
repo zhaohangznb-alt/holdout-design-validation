@@ -1,0 +1,120 @@
+{
+  "protocol_version": "matched_train_control_v1",
+  "created_utc": "2026-10-03T14:46:52.544254+00:00",
+  "targets": [
+    "alk",
+    "braf",
+    "egfr",
+    "erbb2",
+    "kdr",
+    "met",
+    "ache",
+    "dpp4",
+    "ptgs2",
+    "hdac1",
+    "pde4d"
+  ],
+  "panels": {
+    "kinase": [
+      "alk",
+      "braf",
+      "egfr",
+      "erbb2",
+      "kdr",
+      "met"
+    ],
+    "nonkinase": [
+      "ache",
+      "dpp4",
+      "ptgs2",
+      "hdac1",
+      "pde4d"
+    ]
+  },
+  "view": "main",
+  "scenario": "revised",
+  "routes": [
+    "source_exact",
+    "temporal_exact"
+  ],
+  "subsample_seeds": [
+    101,
+    211,
+    307,
+    401,
+    503
+  ],
+  "models": {
+    "rf": [
+      42,
+      53,
+      67
+    ],
+    "ridge": [
+      0
+    ],
+    "tanimoto1nn": [
+      0
+    ]
+  },
+  "common_test": "record_uid intersection, source_exact order; all source metadata/labels/structures equal; disjoint UID, canonical smiles and document from BOTH ORIGINAL train pools; stop on failure, never substitute UID schema",
+  "training_budget": "min(original source row count, original temporal row count), context rows not distinct molecules",
+  "sampling": "For each target/pool/draw independently instantiate np.random.RandomState(drawseed); sort(choice(N,size=m,replace=False)); take iloc in stable original order. If N=m retain whole pool.",
+  "arms": [
+    "source_full",
+    "year_full",
+    "source_matched",
+    "year_matched"
+  ],
+  "reuse": "Both FULL references and every matched pool with N=m reuse exact frozen predictions sliced to common test. No full-pool refits/index builds. Empty tests retained, all metrics blank and no new fit.",
+  "rf": "Original model_config.json rf, change only n_jobs=2 and random_state to fixed seeds; fresh once per exact ordered training signature/model/config",
+  "ridge": {
+    "alpha": 1.0,
+    "fit_intercept": true,
+    "solver": "lsqr",
+    "tol": 0.0001,
+    "max_iter": 10000
+  },
+  "fingerprint": {
+    "radius": 2,
+    "fpSize": 2048,
+    "includeChirality": false
+  },
+  "nn": "binary Morgan Tanimoto, first maximum in ordered sample, zero union similarity=1, no labels in neighbour selection",
+  "primary": "Absolute model MSE; mean squared row loss separately per RF seed THEN median across RF seeds",
+  "fixed_reference": "common-test variance: constant equals common-test mean, descriptive oracle normalization only; normalized_mse=MSE/variance and oracle_skill=1-MSE/variance; blank if variance=0",
+  "baseline": "Each arm uses its own training mean; training_mean_skill=1-MSE/mean((test_y-train_mean)^2); blank if baseline=0",
+  "contrasts": {
+    "matched_pool": "year_matched-source_matched",
+    "year_size": "year_full-year_matched",
+    "source_size": "source_matched-source_full",
+    "full_gap": "year_full-source_full"
+  },
+  "identity": "full_gap=year_size+matched_pool+source_size, per draw, absolute tolerance 1e-12; median components need not add",
+  "aggregation": "Per target/model median across five per-draw metrics and contrasts; retain min/max labelled sampling range, not confidence intervals. All 11 targets and 3 models retained.",
+  "diagnostics": "Both matched pools each draw: maximum test-to-train Tanimoto median and >=0.8 fraction, distinct smiles/documents, population mean/std labels and document_year. No selection or matching on these.",
+  "optional_bins": "Not computed",
+  "parsing": "pandas default original source CSV; round_trip archived/new predictions and prepared/analysis CSV",
+  "label_std_ddof": 0,
+  "prohibitions": [
+    "no tuning",
+    "no model selection",
+    "no optimized seeds",
+    "no bootstrap",
+    "no p-values",
+    "no significance",
+    "no altered labels/partitions/pools",
+    "no worker model execution",
+    "no external mutations"
+  ],
+  "limitation": "Residual matched-size pool differences may reflect label, time, document and composition differences and cannot be interpreted as a pure structural effect.",
+  "population": "Inference describes only the frozen common-test intersection, not the full original held-out population.",
+  "restart": "Exclusive PID RUNNING.lock; incomplete fit ledger or unledgered model/prediction stops for diagnosis. Resume only completed hash-bound jobs. Never repeat uncertain fits.",
+  "environment": {
+    "python": "3.9.10",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "rdkit": "2025.09.2",
+    "sklearn": "1.6.1"
+  }
+}

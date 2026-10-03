@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-03T14:21:44.886125+00:00",
+  "updated_utc": "2026-10-03T15:20:56.958822+00:00",
   "scientific_extension_complete": true,
   "github_account": "zhaohangznb-alt",
   "repository_url": "https://github.com/zhaohangznb-alt/holdout-design-validation",
@@ -18,5 +18,13 @@
   "linux_run_id": 37128892159,
   "linux_executed_commit": "ab031551cfba56b8982d3563221ca04a2d590923",
   "linux_cases": 8,
-  "full_680_clean_directory_retraining": false
+  "full_680_clean_directory_retraining": false,
+  "matched_train_control_public": true,
+  "matched_train_control_shared_test_rows": 4814,
+  "matched_train_control_new_rf_fits": 165,
+  "matched_train_control_new_ridge_fits": 55,
+  "matched_train_control_new_nn_indices": 55,
+  "matched_train_control_reused_predictions": 110,
+  "matched_train_control_windows_verified": true,
+  "matched_train_control_linux_run": false
 }

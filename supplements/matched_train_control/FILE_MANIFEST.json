@@ -1,0 +1,17 @@
+{
+  "ANALYSIS_PLAN.json": "914e21eb7a632a21e5eafb64ea840383a5bf7dc1f14a7fda4f2f288e71251081",
+  "controlled_comparison_v1.tar.xz": "2f9f25702ffa6f0c8eedb8b62dfc65ece2f92f704ad268576a35adc4af5c54c4",
+  "experiment.py": "472c7fe2f78d70be9d221920c555d217ec47fb91de8aaa2c85dd9e89eaf13474",
+  "Figure_7.pdf": "597240485d25a61b9269589e35bbe179ab0f09047075dc48c855e647b8c31f85",
+  "Figure_7_data.csv": "a248295736097c1410af348580467cf91edf420851953ca1b123d68f2d5e7e80",
+  "fresh_reproduce.py": "a7f436181f6781abaab96496cf0983cbe213f2c32eba3b3db58875b7807859c0",
+  "POOL_COUNTS.csv": "3ededf6e25fdfba47c97fca70c31ca5fad525e03abea6d468715d2650980bf21",
+  "README.md": "252918caac2f42e5b029665ae631ec6768bdc1f9489c06c247992437f45dcf34",
+  "requirements.txt": "16af7d530934e2b4dced29f0482b97dd55d6b51ae91355b10290ba0fbf9e8cd9",
+  "RESULT_SUMMARY.json": "c0f6eab35d3158667e1f418e5daf8ab3daa735ba76f0f3678c1591222265515a",
+  "structure_summary.csv": "b25699a7854f0b71159987dbcaf07c8529b3ae382f4d5282382621822d4d0566",
+  "Table_S22_data.csv": "c19bd21f2b1622efe9d810b3a436bbcab9b7ef0c2e04da5bfe29fdf1475d38c5",
+  "target_summary.csv": "8b082aab747cc5acc179159a985d95e2dbc594b0f6ddd0200329971057dfbdb8",
+  "VERIFICATION.json": "d621985ab30e32ff0c84db5e6095f6a1e332d7f3af2afccf44a9c54d11431f21",
+  "verify_snapshot.py": "a632e185e67070010d1719c1e63c11b792b0a87e7b2c63e7b310161215d12851"
+}

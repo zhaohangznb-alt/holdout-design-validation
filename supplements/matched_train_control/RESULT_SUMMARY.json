@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-10-03T15:09:50.780502+00:00",
+  "common_test_rows": 4814,
+  "common_test_n_min": 23,
+  "common_test_n_max": 1416,
+  "targets": 11,
+  "draws": 5,
+  "models": [
+    "rf",
+    "ridge",
+    "tanimoto1nn"
+  ],
+  "unique_prediction_cases": 385,
+  "logical_prediction_references": 1100,
+  "new_rf_fits": 165,
+  "new_ridge_fits": 55,
+  "new_nn_indices": 55,
+  "reused_unique_prediction_cases": 110,
+  "matched_pool_effects": {
+    "rf": {
+      "year_higher_mse": 9,
+      "year_lower_mse": 2,
+      "source_subsampling_higher_mse": 8,
+      "median_normalized_matched_pool": 0.1603044798131983,
+      "median_normalized_source_size": 0.00795763035027399,
+      "median_normalized_full_gap": 0.16881169508558844
+    },
+    "ridge": {
+      "year_higher_mse": 9,
+      "year_lower_mse": 2,
+      "source_subsampling_higher_mse": 6,
+      "median_normalized_matched_pool": 0.5910069328065007,
+      "median_normalized_source_size": 0.03575656976337982,
+      "median_normalized_full_gap": 0.5705836691777245
+    },
+    "tanimoto1nn": {
+      "year_higher_mse": 8,
+      "year_lower_mse": 3,
+      "source_subsampling_higher_mse": 8,
+      "median_normalized_matched_pool": 0.21151748591792294,
+      "median_normalized_source_size": 0.03207587286120755,
+      "median_normalized_full_gap": 0.24287629592289348
+    }
+  }
+}

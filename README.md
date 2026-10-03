@@ -25,6 +25,8 @@ Publication state is tracked in the repository-root `PUBLISH_STATUS.json`. The c
 
 ## Subsequent verified supplements
 
+- [Common-test matched-training-size control](supplements/matched_train_control/README.md): all11 targets,4,814 shared test rows,five fixed size-matched source-pool draws. New165 RF fits,55 Ridge fits and55 NN indices;110 full-pool prediction files reused. RF year-pool MSE remains higher in9/11targets (exceptions EGFR/PTGS2). Figure7,TableS22 and complete inputs/predictions/scripts are in the independently verifiable supplement.
+
 - [Primary RF statistics](primary_rf631/README.md):exact288 seed statistics and96 original conditional document intervals used by SI Tables S3/S4; files, protocol versions and hashes are public.
 - [Representative replay](supplements/representative_replay/README.md):actual Windows/Linux408-table reconstruction, six fresh RF fits and two1-NN indices per platform; Linux run37128892159 passed.
 - [Frozen-prediction diagnostics](supplements/holdout_diagnostics/README.md):44 contexts/11 targets,220 frozen prediction files,51,900 repeated test-context appearances, Figure6 and TableS21 with full-precision data. All11 year-exact targets have smaller training sets and lower median structural proximity. PTGS2 has lower RF absolute MSE but lower skill because its baseline improves more.
@@ -101,3 +103,4 @@ ChEMBL-derived records and metadata retain [CC BY-SA3.0 Unported](https://chembl
 Data source: ChEMBL37, release DOI [10.6019/CHEMBL.database.37](https://doi.org/10.6019/CHEMBL.database.37). API documentation: [ChEMBL Data Web Services](https://chembl.gitbook.io/chembl-interface-documentation/web-services/chembl-data-web-services). `CITATION.cff` describes this companion package. A package DOI is added only after the actual Zenodo record exists.
 
 The intended publication route is the author's GitHub repository, with a versioned Zenodo archive. See `PUBLICATION.md` for the release sequence and the actual `PUBLISH_STATUS.json` for publication status.
+
