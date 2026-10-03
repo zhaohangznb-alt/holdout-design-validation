@@ -1,0 +1,18 @@
+{
+  "ANALYSIS_PLAN.json": "570802ac29c6c702bf55977d83686281ff006c1dba522a705cac75e51326be32",
+  "context_diagnostics.csv": "25b307bc7caf8e2321ca6c3be935d41a5c3231b53cd73f2cbba95e3d9dd95392",
+  "diagnostics.py": "d4e285b378f259175ded55d92d25bf099a2ce4445c5a419b88b74b6cdaf030c9",
+  "EXECUTED_LOCAL_analysis_pipeline.py": "935288af6192a93a45523c435b10ad91c81f2ce54e35318d2bd125cf91d80753",
+  "Figure_6.pdf": "b14eed768a1a789a18ca9e263172a7bc5b43b54e8dd7a7ae405e98c5e8df9709",
+  "Figure_6_data.csv": "b25903673a00c0e77f67a396ccfa4356a1b17422a6732cdb14207d03e7dad447",
+  "fixed_bin_diagnostics.csv": "02cc9342a5204fc0220c31aa47fe0f6a86029d8a06a879bc46500c8d9d55a37c",
+  "make_figure.py": "53a59e940bf39705586378378ea7aa3fe3a6a40fca1baf6c3cef52becef69a85",
+  "PROVENANCE.json": "3d7c582f26d9577d75b32b2713c05c97403d29fa26a778c8668dca1506318fce",
+  "README.md": "234b0ef816f5619a08285d7403639b9b45835e54267ed09ef2e35ec4dd50a86c",
+  "RESULT_SUMMARY.json": "a68115db8dc9f056777bed834d291f74bd050c0bbd5c7af3cfff5324580db521",
+  "row_similarity.csv.gz": "1a3dcc9ed161347418ab15bcce75a868029ec24974c0a0a729c3991273cdc5ba",
+  "Table_S21_data.csv": "c4ad0723488f0792423f0dac3e3bc0644764824e23b58a7b9cf2805e78b294bf",
+  "target_route_diagnostics.csv": "241d05bb6cb66eaff9c40ea67abaefb0fb3daebd7a2497f1f81245c1e85ce27a",
+  "VERIFICATION.json": "9bb693aa1d149c636a56216d55eaf80aeda5837a42c5592b5e688de653a4dfd3",
+  "verify_diagnostics.py": "9459ee6c97cbcfaccc1f92176e648587043d8bd51800fd2970fcf2b76713d3f0"
+}

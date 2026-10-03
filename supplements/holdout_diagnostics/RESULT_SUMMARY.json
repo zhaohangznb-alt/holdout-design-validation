@@ -1,0 +1,21 @@
+{
+  "contexts": 44,
+  "prediction_files": 220,
+  "test_context_appearances": 51900,
+  "targets": 11,
+  "year_exact": {
+    "lower_median_similarity": 11,
+    "median_similarity_change": -0.1542841411177095,
+    "smaller_training_sets": 11,
+    "median_training_size_ratio": 0.8257022782570228,
+    "lower_rf_skill": 11,
+    "median_rf_skill_change": -0.29279840757660214,
+    "rf_mse_increased": 10,
+    "baseline_mse_increased": 7,
+    "ptgs2": {
+      "rf_mse_ratio": 0.9254856930039145,
+      "baseline_mse_ratio": 0.6482687933141251,
+      "skill_change": -0.4140900699799156
+    }
+  }
+}

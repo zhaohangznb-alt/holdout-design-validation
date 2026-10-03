@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-10-03T13:29:58.371446+00:00",
+  "panels": [
+    "kinase",
+    "nonkinase"
+  ],
+  "view": "main",
+  "scenario": "revised",
+  "targets": [
+    "alk",
+    "braf",
+    "egfr",
+    "erbb2",
+    "kdr",
+    "met",
+    "ache",
+    "dpp4",
+    "ptgs2",
+    "hdac1",
+    "pde4d"
+  ],
+  "routes": [
+    "source_exact",
+    "source_scaffold",
+    "temporal_exact",
+    "temporal_scaffold"
+  ],
+  "contexts": 44,
+  "prediction_files": 220,
+  "models": [
+    [
+      "rf",
+      42
+    ],
+    [
+      "rf",
+      53
+    ],
+    [
+      "rf",
+      67
+    ],
+    [
+      "ridge",
+      0
+    ],
+    [
+      "tanimoto1nn",
+      0
+    ]
+  ],
+  "contrasts": [
+    [
+      "temporal_exact",
+      "source_exact"
+    ],
+    [
+      "source_scaffold",
+      "source_exact"
+    ],
+    [
+      "temporal_scaffold",
+      "temporal_exact"
+    ]
+  ],
+  "bins": [
+    0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1
+  ],
+  "bin_closure": "left-closed, final includes 1; empty n=0 metrics blank",
+  "weighting": "equal contexts; rows equally weighted within context; no molecule-equal sensitivity",
+  "rf_aggregation": "mean row squared loss per seed, then metric-wise median over seeds",
+  "fingerprint": {
+    "radius": 2,
+    "fpSize": 2048,
+    "includeChirality": false
+  },
+  "nearest": "ordered training, first maximum; RDKit BulkTanimotoSimilarity; empty union retains original similarity 1",
+  "prohibitions": "no fitting, tuning, bootstrap, selection, significance, causal attribution or external mutation",
+  "label_std_ddof": 0
+}

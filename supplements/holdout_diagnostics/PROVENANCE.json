@@ -1,0 +1,18 @@
+{
+  "executed_local_script_sha256": "935288af6192a93a45523c435b10ad91c81f2ce54e35318d2bd125cf91d80753",
+  "portable_script_sha256": "d4e285b378f259175ded55d92d25bf099a2ce4445c5a419b88b74b6cdaf030c9",
+  "portable_scope": "Same numerical code with command-line bundle, prepared and output paths; local manuscript copying removed",
+  "input_bundle_sha256": "8fa707f1b8e5569b9723105c741cdd6b5d174441f718c78a00876d028c5724a1",
+  "uncompressed_row_csv_sha256": "cf54fbfad779d086f994b889b77ea7f3cd5fc93424b88d9b13f7da0cdd8f85f2",
+  "repairs": [
+    {
+      "type": "Source-label parser compatibility",
+      "detail": "Frozen predictions use round-trip parsing; source training/test labels retain default pandas parsing from the original runner. Structural checkpoints resolve nearest labels by original training UID."
+    },
+    {
+      "type": "Bin boundary metadata",
+      "detail": "Literal edges [0,.2,.4,.6,.8,1] replace multiplication-generated representations. Membership counts and losses are unchanged."
+    }
+  ],
+  "scientific_inputs_changed": false
+}

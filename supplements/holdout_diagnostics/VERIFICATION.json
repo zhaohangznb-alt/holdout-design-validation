@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "protected_input_files": 341,
+  "contexts": 44,
+  "prediction_files": 220,
+  "row_contexts": 51900,
+  "bin_rows": 660,
+  "empty_bin_rows": 39,
+  "paired_contrasts": 33,
+  "independent_nearest_checks": 132,
+  "nearest_label_max_abs_difference": 0.0,
+  "bin_max_abs_difference": 0.0,
+  "zero_test_fingerprints": 0,
+  "existing_figure_files_unchanged": 14,
+  "no_fitting": true,
+  "no_bootstrap": true
+}
