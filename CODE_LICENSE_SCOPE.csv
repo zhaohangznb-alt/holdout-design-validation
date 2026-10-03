@@ -1,0 +1,13 @@
+path,sha256,license,scope
+analyze_results.py,c50f30f34e41ade4de8c1c560a775719ef1ec7de47aa7a9383b0c96117137189,MIT,newly authored companion code; data and third-party packages excluded
+external_runner.py,2669d5970a1b8e3ad48fe576659866914a7ff10681ed033d6dbe878741b9f72d,MIT,newly authored companion code; data and third-party packages excluded
+fetch_external.py,47f4bcb7c1595a544967f3f5750039da121ac2b765f24f9775e16296fbe45777,MIT,newly authored companion code; data and third-party packages excluded
+plot_results.py,8e8f0fbd73dbe3f9c2b819545ee651cf1094ae506475b01bc462023c65d9d910,MIT,newly authored companion code; data and third-party packages excluded
+prepare_current.py,54e28d909c982f1278c28bf5487e1b74b2f715d3c0d433aa4b39e2ea1cc2fcc0,MIT,newly authored companion code; data and third-party packages excluded
+prepare_external.py,6b091852762b7d1c06d367ef760b391066ca616e70f27fb3060cee6beec82398,MIT,newly authored companion code; data and third-party packages excluded
+reproduce.py,fbe7042d0b4ca9d5c10828460f3603abc2fec71f2ecf068f66edf516a4db504b,MIT,newly authored companion code; data and third-party packages excluded
+runner.py,a4d426258d7cc3635201b53912915df18ba7af39461d4fd736fd45e9a93d7e2a,MIT,newly authored companion code; data and third-party packages excluded
+validate_external.py,4b8da110304c5042c237c20038fdedd424f73fc6bf2a5415d3ca380344b3b488,MIT,newly authored companion code; data and third-party packages excluded
+validate_stage1.py,2b4f69b1f9742a55a9f53bec4b07498fbe28c41504400045db6011ff01087a81,MIT,newly authored companion code; data and third-party packages excluded
+verify_release.py,810c3608b9e48bbb540d841de895c48c72f9f805e81c437f533f29e8c54fcf13,MIT,newly authored companion code; data and third-party packages excluded
+unpack_bundle.py,16b92ed7b20a9dfbdea67988b787952280e1ce1a97e836929a9ceabc928e1533,MIT,newly authored extraction helper

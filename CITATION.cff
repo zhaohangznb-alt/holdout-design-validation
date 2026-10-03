@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Cite this versioned companion package and the ChEMBL 37 data source."
+title: "Holdout-design validation: frozen-input reproduction and cross-model extensions"
+type: dataset
+version: "1.0.0"
+date-released: "2026-10-03"
+authors:
+  - family-names: Zhao
+    given-names: Hang
+license: CC-BY-SA-3.0
+abstract: "Companion algorithm validation across six kinase and five non-kinase targets from ChEMBL 37, including fixed RF, Ridge and Tanimoto 1-NN specifications, frozen inputs, per-row predictions and offline training commands. Author-created scripts are separately licensed MIT."

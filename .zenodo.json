@@ -1,0 +1,27 @@
+{
+  "title": "Holdout-design validation: frozen-input reproduction and cross-model extensions",
+  "version": "1.0.0",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-sa-3.0",
+  "creators": [
+    {
+      "name": "Zhao, Hang"
+    }
+  ],
+  "description": "Frozen-input reproduction and fixed RF, Ridge and Tanimoto 1-NN evaluation across six kinase and five non-kinase targets from ChEMBL 37. Includes inputs, policies, API responses, 680 prediction cases, results and offline fresh-training commands. Author-created code is separately licensed MIT; ChEMBL-derived records retain CC BY-SA 3.0. Windows full training was executed. No Linux full-training or publisher-original certification is claimed.",
+  "keywords": [
+    "machine learning",
+    "QSAR",
+    "holdout design",
+    "ChEMBL",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.6019/CHEMBL.database.37",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    }
+  ]
+}

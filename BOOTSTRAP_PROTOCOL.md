@@ -1,0 +1,5 @@
+# Conditional cross-model intervals
+
+Added after model fitting began, as allowed by the original frozen model protocol. This is a supplementary precision analysis, not a prespecified significance claim or model-selection criterion.
+
+For each panel/view/scenario/target/route, sum squared losses and row counts within test documents. Draw 2000 multinomial whole-document bootstrap samples, using one common set of document weights for all model predictions and RF seeds in that context. Skill is one minus weighted model loss divided by weighted baseline loss; summarize RF by its three-seed median and deterministic methods once. Report the 2.5% and97.5% percentiles of skills and paired model-skill differences. Seeds derive reproducibly from the context identifier. Intervals condition on the frozen cohort, partitions and fitted models; they do not cover retraining uncertainty. No bootstrap across targets and no population-of-targets inference. Route contrasts remain descriptive because the test populations differ.
