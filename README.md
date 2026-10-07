@@ -2,6 +2,12 @@
 
 Companion to *Holdout Design and Utility Estimates in ChEMBL Bioactivity Prediction*.
 
+## V12 manuscript evidence supplement (package 1.1.0)
+
+The [new evidence archive](supplements/manuscript_evidence_v12/README.md) adds F1 full Windows clean-directory replay records, F2 training-document resampling, F5 label/period controls, F8 weighting, phase-3 extensions, limited-grid and targeted checkpoint sensitivities, and conditional release-forward intervals. It supplies data, protocols, project code and artwork; the manuscript, full upstream inputs and model weights are not deposited. See its component licenses, current file manifest and 81-display index. Earlier archives below retain their original bytes and immutable citations.
+
+The historical API cache is not directly bound to an immutable ChEMBL release, despite a contemporaneous status response naming ChEMBL 37. The separately versioned 36/37 transition has a distinct provenance chain. The new evidence records full Windows clean-directory retraining; full Linux 680-case retraining remains unperformed. No journal submission or manuscript approval is implied. No Zenodo DOI exists in these metadata until an actual record has been verified.
+
 The complete offline package is `verified_bundle_v1.tar.xz` (SHA-256 in `BUNDLE_SHA256.txt`). It contains frozen inputs, all 680 prediction cases, analysis, fit ledgers and verification records. Root-level scripts are provided for browsing; run the pipeline from the extracted `bundle/` directory.
 
 ```sh

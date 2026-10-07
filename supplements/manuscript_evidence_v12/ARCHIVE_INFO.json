@@ -1,0 +1,10 @@
+{
+  "path": "supplements/manuscript_evidence_v12/manuscript_evidence_v12.tar.xz",
+  "sha256": "27d8b3400860d4c3e5943f44406447af601d5abfd4d275ab334acb388a9178d8",
+  "bytes": 13159212,
+  "manifest_entries": 1602,
+  "source_csv_files_unchanged": 554,
+  "display_index_rows": 81,
+  "package_version": "1.1.0",
+  "doi": null
+}

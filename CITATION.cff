@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "Cite this versioned companion package and the ChEMBL 37 data source."
-title: "Holdout-design validation: frozen-input reproduction and cross-model extensions"
+message: "Cite the immutable package commit and the applicable ChEMBL data sources. A package DOI is pending."
+title: "Holdout-design validation: frozen-input pipeline and V12 manuscript evidence"
 type: dataset
-version: "1.0.0"
-date-released: "2026-10-03"
+version: "1.1.0"
+date-released: "2026-10-07"
 authors:
   - family-names: Zhao
     given-names: Hang
 license: CC-BY-SA-3.0
-abstract: "Companion algorithm validation across six kinase and five non-kinase targets from ChEMBL 37, including fixed RF, Ridge and Tanimoto 1-NN specifications, frozen inputs, per-row predictions and offline training commands. Author-created scripts are separately licensed MIT."
+abstract: "Version 1.1.0 of the companion data/code repository for Holdout Design and Utility Estimates in ChEMBL Bioactivity Prediction. Retains the original frozen-input 680-case RF/Ridge/1-NN pipeline and published controls; adds a versioned V12 evidence archive with full Windows clean-directory replay records, training-document resampling, label/period and weighting controls, D-MPNN/42-target/release-transition extensions, limited-grid and post hoc checkpoint/conditional-interval sensitivities. Includes results, protocols, project-authored code, numerical source locators and scientific artwork. Full manuscript, all upstream extension inputs, model weights and publisher articles are excluded. No new training was performed for publication. Historical API cache release-binding uncertainty is distinct from the versioned ChEMBL 36/37 extension. Data retain CC BY-SA 3.0; newly authored scripts have separately scoped MIT licenses. Full 680-case Linux retraining is not claimed."

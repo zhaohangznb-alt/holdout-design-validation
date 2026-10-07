@@ -1,6 +1,6 @@
 {
-  "title": "Holdout-design validation: frozen-input reproduction and cross-model extensions",
-  "version": "1.0.0",
+  "title": "Holdout-design validation: frozen-input pipeline and V12 manuscript evidence",
+  "version": "1.1.0",
   "upload_type": "dataset",
   "access_right": "open",
   "license": "cc-by-sa-3.0",
@@ -9,7 +9,7 @@
       "name": "Zhao, Hang"
     }
   ],
-  "description": "Frozen-input reproduction and fixed RF, Ridge and Tanimoto 1-NN evaluation across six kinase and five non-kinase targets from ChEMBL 37. Includes inputs, policies, API responses, 680 prediction cases, results and offline fresh-training commands. Author-created code is separately licensed MIT; ChEMBL-derived records retain CC BY-SA 3.0. Windows full training was executed. No Linux full-training or publisher-original certification is claimed.",
+  "description": "Version 1.1.0 of the companion data/code repository for Holdout Design and Utility Estimates in ChEMBL Bioactivity Prediction. Retains the original frozen-input 680-case RF/Ridge/1-NN pipeline and published controls; adds a versioned V12 evidence archive with full Windows clean-directory replay records, training-document resampling, label/period and weighting controls, D-MPNN/42-target/release-transition extensions, limited-grid and post hoc checkpoint/conditional-interval sensitivities. Includes results, protocols, project-authored code, numerical source locators and scientific artwork. Full manuscript, all upstream extension inputs, model weights and publisher articles are excluded. No new training was performed for publication. Historical API cache release-binding uncertainty is distinct from the versioned ChEMBL 36/37 extension. Data retain CC BY-SA 3.0; newly authored scripts have separately scoped MIT licenses. Full 680-case Linux retraining is not claimed.",
   "keywords": [
     "machine learning",
     "QSAR",
@@ -20,6 +20,11 @@
   "related_identifiers": [
     {
       "identifier": "10.6019/CHEMBL.database.37",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.6019/CHEMBL.database.36",
       "relation": "isDerivedFrom",
       "scheme": "doi"
     }

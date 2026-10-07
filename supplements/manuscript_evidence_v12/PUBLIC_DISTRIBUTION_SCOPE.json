@@ -1,0 +1,46 @@
+{
+  "package_version": "1.1.0",
+  "prepared_utc": "2026-10-07T09:58:11.925595+00:00",
+  "publication_scope": "data, protocols, project code, numerical evidence and scientific artwork",
+  "manuscript_fulltext_distributed": false,
+  "publisher_fulltext_distributed": false,
+  "model_weights_distributed": false,
+  "new_training_performed": false,
+  "author_final_manuscript_approval_not_inferred": true,
+  "doi": null,
+  "base_distribution_manifest_sha256": "22333e0f60980fe3cbd7fe117b79bc0404c9aa0db24764476dfbd5cb41e114fe",
+  "additional_omissions": [
+    {
+      "path": "attachments/Historical_source_decisions_complete.tex",
+      "sha256": "95030c35ad6f8b27c7035367c2fe2aabad8c7d3aa2a9490e14d35ce8e8250b33",
+      "reason": "Historical manuscript prose kept local"
+    },
+    {
+      "path": "attachments/Reproduction_history_complete.tex",
+      "sha256": "4cd5473330be23a002549feccaf81ef485ff71019f00e01c4b8444dc5ba93584",
+      "reason": "Historical manuscript prose kept local"
+    },
+    {
+      "path": "attachments/Superseded_analysis_history_complete.tex",
+      "sha256": "514f34ed3cfccb72254ef311faf46d82fcff913c215697953f3d7426ba9fab33",
+      "reason": "Historical manuscript prose kept local"
+    },
+    {
+      "path": "DEPOSIT_METADATA_DRAFT.json",
+      "sha256": "0f5c941f49b9b47cf19731116101de467a88a2f6613e15c81e8c055b762b15f4",
+      "reason": "Superseded unpublished-deposit preparation instructions"
+    },
+    {
+      "path": "PUBLISH_STEPS_CN.md",
+      "sha256": "c107c6d06f1befd4880d04663b8d6379f1ab7d3caa69080aafe7c11d39adcb1e",
+      "reason": "Superseded unpublished-deposit preparation instructions"
+    }
+  ],
+  "previous_private_redactions_ledger": "DISTRIBUTION_CHANGES.json",
+  "code_file_count": 38,
+  "upstream_license_references": [
+    "LICENSE_AND_ATTRIBUTION.md",
+    "LICENSE_CODE.txt",
+    "CODE_LICENSE_SCOPE.csv"
+  ]
+}
